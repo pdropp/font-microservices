@@ -1,6 +1,6 @@
 package br.com.SpringFont.Controllers;
 
-import br.com.SpringFont.Exeception.UnsupportedMathOperationExeception;
+import br.com.SpringFont.Exeception.ResourceNotFoundExeception;
 import br.com.SpringFont.Functions.SimpleMath;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +24,7 @@ public class MathController {
 
     ) throws Exception{
         if(!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-            throw new UnsupportedMathOperationExeception("Please set a numeric value");
+            throw new ResourceNotFoundExeception("Please set a numeric value");
         }
         
      return math.sum(convertToDouble(numberOne), convertToDouble(numberTwo));
@@ -37,7 +37,7 @@ public class MathController {
 
     ) throws Exception{
         if(!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-            throw new UnsupportedMathOperationExeception("Please set a numeric value");
+            throw new ResourceNotFoundExeception("Please set a numeric value");
         }
 
         return math.sub(convertToDouble(numberOne), convertToDouble( numberTwo));
@@ -50,7 +50,7 @@ public class MathController {
 
     ) throws Exception{
         if(!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-            throw new UnsupportedMathOperationExeception("Please set a numeric value");
+            throw new ResourceNotFoundExeception("Please set a numeric value");
         }
 
         return math.multi(convertToDouble(numberOne), convertToDouble( numberTwo));
@@ -63,7 +63,7 @@ public class MathController {
 
     ) throws Exception{
         if(!isNumeric(numberOne) || !isNumeric(numberTwo)) {
-            throw new UnsupportedMathOperationExeception("Please set a numeric value");
+            throw new ResourceNotFoundExeception("Please set a numeric value");
         }
 
         return math.div(convertToDouble(numberOne), convertToDouble( numberTwo));
@@ -75,7 +75,7 @@ public class MathController {
 
     ) throws Exception{
         if(!isNumeric(number)) {
-            throw new UnsupportedMathOperationExeception("Please set a numeric value");
+            throw new ResourceNotFoundExeception("Please set a numeric value");
         }
 
         return math.raizQuad(convertToDouble(number));

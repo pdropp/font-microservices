@@ -1,7 +1,7 @@
 package br.com.SpringFont.Exeception.handler;
 
 import br.com.SpringFont.Exeception.ExceptionResponse;
-import br.com.SpringFont.Exeception.UnsupportedMathOperationExeception;
+import br.com.SpringFont.Exeception.ResourceNotFoundExeception;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -27,14 +27,14 @@ public class CustomizedResponseEntityExeceptionHandler extends ResponseEntityExc
 
 
     }
-    @ExceptionHandler(UnsupportedMathOperationExeception.class)
-    public final ResponseEntity<ExceptionResponse> handleBadRequestExeceptions(Exception ex, WebRequest request){
+    @ExceptionHandler(ResourceNotFoundExeception.class)
+    public final ResponseEntity<ExceptionResponse> handleNotFoundExeceptions(Exception ex, WebRequest request){
         ExceptionResponse exceptionResponse = new ExceptionResponse(
                 new Date(),
                 ex.getMessage(),
                 request.getDescription(false));
 
-        return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
 
 
     }
