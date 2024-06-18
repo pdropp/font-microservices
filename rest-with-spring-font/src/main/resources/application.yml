@@ -6,9 +6,10 @@
       username: root
       password: Ped@030417
     jpa:
+      open-in-view: false
       hibernate:
         ddl-auto: update
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MySQL8Dialect
+     # properties:
+     #   hibernate:
+     #     dialect: org.hibernate.dialect.MySQL8Dialect
       show-sql: false
